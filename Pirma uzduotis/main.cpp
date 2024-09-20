@@ -35,6 +35,7 @@ int main() {
     cout << "Klubo ikurimo metai:" << Metai << endl;
     cout << "Klubo vietu skaicius:" << Skaicius << endl;
 
+    //trecia uzduotis
     cout << "----------3 uzduotis---------" << endl;
 
     string marke = "NISSAN";
@@ -44,5 +45,42 @@ int main() {
     double litrazas = 3.5;
 
     cout << "Automobilis" << " " << marke << " " <<  modelis << " " << "yra pagamintas" << " " << Pagaminimometai << " " << "metais." << " " << "Jo motoras" << " " << litrazas << " " << "litrazo." << " " << "Automobilis yra" << " " << spalva << " " << "spalvos." << endl;
+
+    //ketvirta uzduotis
+    cout << "----------4 uzduotis---------" << endl;
+
+    int a=13, b=5;
+    double c=17.5;
+    cout << a + b - c << endl;
+    cout << 15 / 2 + c << endl;
+    cout << a / static_cast<double>(b) + 2 * c << endl;
+    cout << 14 % 3 + 6.3 + b / a << endl;
+    cout << static_cast<int>(c) % 5 + a - b << endl;
+    cout << 13.5 / 2 + 4.0 * 3.5 + 18 << endl;
+
+    //penkta uzduotis
+    cout << "----------5 uzduotis---------" << endl;
+
+    double v;
+    int n,pirmS,antrasS,treciasS,ketvirtasS,penktasS;
+    cout << "Iveskite kiek skaiciu yra:" << endl;
+    cin >> n;
+    cout << "Iveskite skaicius:" << endl;
+    cin >> pirmS >> antrasS >> treciasS >> ketvirtasS >> penktasS;
+    v=(pirmS+antrasS+treciasS+ketvirtasS+penktasS)/n;
+    cout << "Vidurkis:" << endl;
+    cout << v << endl;
+
+    //sesta uzduotis
+    cout << "----------6 uzduotis---------" << endl;
+    int d,s;
+    int A,B;
+    cout << "Iveskite dvizenkli:" << endl;
+    cin >> d;
+    A=d/10%10;
+    B=d%10;
+    s=A+B;
+    cout << "Dvizenklio skaiciaus suma:" << endl;
+    cout << s << endl;
     return 0;
 }
