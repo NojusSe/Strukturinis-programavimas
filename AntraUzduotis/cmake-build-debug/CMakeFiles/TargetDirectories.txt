@@ -1,0 +1,3 @@
+C:/Users/s057769/Documents/Strukturinis-programavimas/AntraUzduotis/cmake-build-debug/CMakeFiles/AntraUzduotis.dir
+C:/Users/s057769/Documents/Strukturinis-programavimas/AntraUzduotis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s057769/Documents/Strukturinis-programavimas/AntraUzduotis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
