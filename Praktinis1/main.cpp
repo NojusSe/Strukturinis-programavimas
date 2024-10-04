@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
 const double GBP_Bendras = 0.8593;
@@ -14,7 +15,7 @@ const double INR_Bendras = 88.8260;
 const double INR_Pirkti = 85.2614;
 const double INR_Parduoti = 92.8334;
 
-void palygintiValiuta(string valiuta) {
+void PalygintiValiuta(string valiuta) {
     double kaina = 0.0;
 
     if (valiuta == "GBP") kaina = GBP_Bendras;
@@ -24,10 +25,10 @@ void palygintiValiuta(string valiuta) {
         cout << "Netinkama valiuta" << endl;
         return;
     }
-    cout << "1 EUR = " << setprecision(4) << kaina << " " << valiuta << endl;
+    cout << "1 EUR = " << setprecision(3) << kaina << " " << valiuta << endl;
 }
 
-void pirktiValiuta(string valiuta, double kiekis) {
+void PirktiValiuta(string valiuta, double kiekis) {
     double kaina = 0.0;
 
     if (valiuta == "GBP") kaina = GBP_Pirkti;
@@ -41,7 +42,7 @@ void pirktiValiuta(string valiuta, double kiekis) {
     cout << "Jus gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << " uz " << kiekis << " EUR" << endl;
 }
 
-void parduotiValiuta(string valiuta, double kiekis) {
+void ParduotiValiuta(string valiuta, double kiekis) {
     double kaina = 0.0;
 
     if (valiuta == "GBP") kaina = GBP_Parduoti;
@@ -55,36 +56,46 @@ void parduotiValiuta(string valiuta, double kiekis) {
     cout << "Jus gausite " << fixed << setprecision(2) << rezultatas << " EUR uz " << kiekis << " " << valiuta << endl;
 }
 
-int main() {
+int main()
+{
     int pasirinkimas;
     string valiuta;
     double kiekis;
-
+    while(pasirinkimas != 4) {
     cout << "Valiutu keitimas" << endl;
     cout << "Pasirinkite veiksma kuri norite daryti:" << endl;
     cout << "1. Palyginti valiuta" << endl;
     cout << "2. Pirkti valiuta" << endl;
     cout << "3. Parduoti valiuta" << endl;
+    cout << "4. Isejimas is programos" << endl;
     cin >> pasirinkimas;
 
-    cout << "Iveskite valiuta (GBP, USD, INR): ";
-    cin >> valiuta;
-
-    if (pasirinkimas == 1) {
-        palygintiValiuta(valiuta);
-    }
-    else if (pasirinkimas == 2) {
+    switch(pasirinkimas) {
+        case 1:
+            cout << "Iveskite valiuta (GBP, USD, INR): ";
+        cin >> valiuta;
+        PalygintiValiuta(valiuta);
+        break;
+        case 2:
+            cout << "Iveskite valiuta (GBP, USD, INR): ";
+        cin >> valiuta;
         cout << "Iveskite kieki EUR valiutos: ";
         cin >> kiekis;
-        pirktiValiuta(valiuta, kiekis);
-    }
-    else if (pasirinkimas == 3) {
-        cout << "Iveskite kieki EUR valiutos: ";
+        PirktiValiuta(valiuta, kiekis);
+        break;
+        case 3:
+            cout << "Iveskite valiuta (GBP, USD, INR): ";
+        cin >> valiuta;
+        cout << "Iveskite kieki parduodamos valiutos: ";
         cin >> kiekis;
-        parduotiValiuta(valiuta, kiekis);
+        ParduotiValiuta(valiuta, kiekis);
+        break;
+        case 4:
+            cout << "Isejote is programos" << endl;
+        break;
+        default:
+            cout << "Tokio pasirinkimo nera. Bandykite dar karta" << endl;
+        return 0;
     }
-    else {
-        cout << "Neteisinga" << endl;
     }
-    return 0;
 }
