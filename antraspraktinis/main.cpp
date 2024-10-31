@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -21,18 +22,19 @@ int didziausiasBendrasDaliklis(int skaicius1, int skaicius2) {
 
 // 3.uzduotis
 void zaidimas() {
+    srand(time(0));
     int atsitiktinisSkaicius = rand() % 100 + 1;
     int spejimas;
 
-    cout << "Spekite skaiciu nuo 1 iki 100: ";
+    cout << " Spekite skaiciu nuo 1 iki 100: ";
     while (true) {
         cin >> spejimas;
         if (spejimas > atsitiktinisSkaicius) {
-            cout << "Per didelis. Iveskite nauja skaiciu:";
+            cout << " Per didelis. Iveskite nauja skaiciu: ";
         } else if (spejimas < atsitiktinisSkaicius) {
-            cout << "Per mažas. Iveskite nauja skaiciu: ";
+            cout << " Per mazas. Iveskite nauja skaiciu: ";
         } else {
-            cout << "Teisingas skaicius\n";
+            cout << " Teisingas skaicius\n";
             break;
         }
     }
