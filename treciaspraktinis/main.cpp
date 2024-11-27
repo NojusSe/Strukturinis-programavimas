@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const string LIETUVIU_ABECELE = "AĄBCČDEĘĖFGHIĮYJKLMNOPRSŠTUŲŪVZŽ";
+const string LIETUVIU_ABECELE = "ABCDEFGHIYJKLMNOPRSTUVZ";
 
 string kartotiRakta(const string &raktas, size_t ilgis);
 string sifruotiSuAbecele(const string &tekstas, const string &raktas);
@@ -100,7 +100,7 @@ string desifruotiSuAbecele(const string &sifras, const string &raktas) {
             size_t tekstasIndeksas = (sifroIndeksas + LIETUVIU_ABECELE.size() - raktasIndeksas) % LIETUVIU_ABECELE.size();
             tekstas += LIETUVIU_ABECELE[tekstasIndeksas];
         } else {
-            tekstas += sifras[i]; // Neabėcėlės simboliai paliekami nepakeisti
+            tekstas += sifras[i];
         }
     }
     return tekstas;
@@ -112,8 +112,10 @@ string sifruotiSuASCII(const string &tekstas, const string &raktas) {
     string sifras;
 
     for (size_t i = 0; i < tekstas.length(); i++) {
-        char uzsifruotasSimbolis = (tekstas[i] + pakartotasRaktas[i]) % 256;
+        char uzsifruotasSimbolis = (tekstas[i] + pakartotasRaktas[i]) % 128;
         sifras += uzsifruotasSimbolis;
+        cout << sifras << endl;
+
     }
     return sifras;
 }
@@ -124,7 +126,7 @@ string desifruotiSuASCII(const string &sifras, const string &raktas) {
     string tekstas;
 
     for (size_t i = 0; i < sifras.length(); i++) {
-        char issifruotasSimbolis = (sifras[i] - pakartotasRaktas[i] + 256) % 256;
+        char issifruotasSimbolis = (sifras[i] - pakartotasRaktas[i] + 128) % 128;
         tekstas += issifruotasSimbolis;
     }
     return tekstas;
