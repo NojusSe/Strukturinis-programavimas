@@ -1,0 +1,3 @@
+C:/Users/Nojus/Documents/Strukturinis-programavimas/ketvirtaspraktinis/cmake-build-debug/CMakeFiles/ketvirtaspraktinis.dir
+C:/Users/Nojus/Documents/Strukturinis-programavimas/ketvirtaspraktinis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Nojus/Documents/Strukturinis-programavimas/ketvirtaspraktinis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
